@@ -1,0 +1,661 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="{% static 'images/rgmtansparentlogo.png' %}" type="image/x-icon">
+  <title>RGMFutureVision21</title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+
+  <!-- leaf icon -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <!-- nice select -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css"
+    integrity="sha256-mLBIhmBvigTFWPSCtvdu6a76T+3Xyt+K571hupeFLg4=" crossorigin="anonymous" />
+  <!-- font awesome style -->
+  <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="whatsapp-icon"><a href="https://chat.whatsapp.com/FLKNynMe2eTAJ1Bf3jUC9f" target="_blank"><img
+        src="{% static 'images/whatsapplogo.png' %}" alt=""></a> </div>
+
+  <div class="hero_area">
+    <div class="hero_bg_box">
+    </div>
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="header_top">
+        <div class="container-fluid header_top_container">
+
+          <div class="contact_nav">
+            <a href="">
+              <!-- <i class="fa fa-map-marker" aria-hidden="true"></i> -->
+              <span>
+                Location
+              </span>
+            </a>
+            <a href="">
+              <!-- <i class="fa fa-phone" aria-hidden="true"></i> -->
+              <span>
+                <a href="tel:8199857208">Call : +91 9079183342</a>
+              </span>
+            </a>
+            <a href="">
+              <!-- <i class="fa fa-envelope" aria-hidden="true"></i> -->
+              <span>
+                <a href="mailto:info@rgmfuturevision21.com" id="mail">info@rgmfuturevision21.com</a>
+              </span>
+            </a>
+          </div>
+          <div class="social_box">
+            <a href="">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="header_bottom">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand " href="/index">RGMFutureVision21</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""> </span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav  ">
+                <li class="nav-item ">
+                  <a class="nav-link" href="/index">Home </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/about">About</a></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/team">Team</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="/career">Careers<span class="sr-only">(current)</span> </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/contact">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" id="openFormBtn">
+                    <!-- <i class="fa fa-user" aria-hidden="true"></i> -->
+                    <span>
+                      Inquiry
+                    </span>
+                  </a>
+                </li>
+                <!-- <form class="form-inline justify-content-center">
+                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                  </button>
+                </form> -->
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    <div id="formPopup" class="form-popup">
+      <form id="popupForm" class="form-container" action="/resource/" method="POST">
+        {% csrf_token %}
+        <h2><b>Inquiry Form</b></h2>
+        <div class="form-group">
+          <!-- <label for="name">Name:</label> -->
+          <input type="text" id="name" name="name" class="form-control" placeholder="Name" required>
+        </div>
+        <div class="form-group">
+          <!-- <label for="email">Email Address:</label> -->
+          <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+          <!-- <label for="phone">Phone:</label> -->
+          <input type="tel" id="phone" name="phone" class="form-control" placeholder="phone Number" required>
+        </div>
+        <div class="form-group">
+          <!-- <label for="city">City:</label> -->
+          <input type="text" id="city" name="city" class="form-control" placeholder="City" required>
+        </div>
+        <div class="form-group">
+          <!-- <label for="state">State:</label> -->
+          <input type="text" id="state" name="state" class="form-control" placeholder="State" required>
+        </div>
+        <div class="form-group">
+          <!-- <label for="country">Country:</label> -->
+          <select id="country" name="country" class="form-control" required>
+            <option value="">Select Country</option>
+            <option value="India">India</option>
+            <!-- Add more countries here -->
+          </select>
+        </div>
+        <div class="form-group">
+          <!-- <label for="product">Select Product:</label> -->
+          <select id="product" name="product" class="form-control" required>
+            <option value="">Select Product</option>
+            <option value="Pellets">Pellets</option>
+            <option value="CNG">CNG</option>
+            <option value="Ethanol">Ethanol</option>
+            <option value="BioFuel Fertilizer">BioFuel Fertilizer</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <!-- <label for="requirements">Requirements:</label> -->
+          <textarea id="requirements" name="message" class="form-control" required placeholder="Message"></textarea>
+        </div>
+        <button type="submit" class="btn-success">Submit</button>
+        <button type="button" id="closeFormBtn" class="btn btn-danger"><img src="{% static 'images/close.png' %}"
+            alt=""></button>
+      </form>
+    </div>
+
+    <section class="slider_section ">
+      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container ">
+              <div class="row">
+                <div class="col-lg-10 col-md-11 mx-auto">
+                  <div class="detail-box">
+                    <img src="{% static 'images/pellets.png' %}" alt="" id="slider-img">
+                    <div class="hidden-text">
+                      <h2 style="text-decoration: underline;"><strong>Pellets</strong></h2><br>
+                      <p style="text-align: justify;">Made from compressed organic materials like wood or agricultural
+                        residues, bio-pellets serve as
+                        a renewable and eco-friendly fuel source. They offer high energy efficiency and produce low
+                        emissions, making them ideal for heating systems and industrial processes focused on reducing
+                        their carbon footprint.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container ">
+              <div class="row">
+                <div class="col-lg-10 col-md-11 mx-auto">
+                  <div class="detail-box">
+                    <img src="{% static 'images/biofuel (1).png' %}" alt="" id="slider-img">
+                    <div class="hidden-text">
+                      <h2 style="text-decoration: underline;"><strong>CNG</strong></h2><br>
+                      <p style="text-align: justify;">This alternative to gasoline and diesel is used mainly in
+                        vehicles, delivering cleaner
+                        combustion and lower greenhouse gas emissions. CNG is widely adopted for both public and private
+                        transport, offering a more sustainable option with reduced impact on air quality.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="container ">
+              <div class="row">
+                <div class="col-lg-10 col-md-11 mx-auto">
+                  <div class="detail-box">
+                    <img src="{% static 'images/ethanolplant.png' %}" alt="" id="slider-img">
+                    <div class="hidden-text">
+                      <h2 style="text-decoration: underline;"><strong>Ethanol</strong></h2><br>
+                      <p style="text-align: justify;">Derived from crops such as corn and sugarcane, ethanol is a
+                        renewable biofuel frequently
+                        blended with gasoline. It’s commonly used to lower emissions in cars, offering a cleaner
+                        alternative by reducing pollutants and dependence on fossil fuels while supporting agricultural
+                        economies.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container ">
+              <div class="row">
+                <div class="col-lg-10 col-md-11 mx-auto">
+                  <div class="detail-box">
+                    <img src="{% static 'images/biofuelferti.jpeg' %}" alt="" id="slider-img">
+                    <div class="hidden-text">
+                      <h2 style="text-decoration: underline;"><Strong>BioFuel Fertilizer</Strong></h2>
+                      <p style="text-align: justify;">Created as a byproduct of biofuel production, this nutrient-rich
+                        fertilizer supports
+                        sustainable agriculture by enhancing soil quality and crop yields. Its use not only recycles
+                        organic material but also minimizes reliance on synthetic fertilizers, promoting eco-friendly
+                        farming practices.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel_btn-box">
+          <a class="carousel-control-prev" href="#customCarousel1" role="button" data-slide="prev">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#customCarousel1" role="button" data-slide="next">
+            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- end slider section -->
+  </div>
+
+
+  <!-- service section -->
+
+  <section class="service_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center ">
+        <h2 class="">
+          Our Products
+        </h2>
+        <p class="col-lg-8 px-0">
+        </p>
+      </div>
+      <div class="service_container">
+        <div class="carousel-wrap ">
+          <div class="service_owl-carousel owl-carousel">
+            <div class="item">
+              <div class="box ">
+                <div class="img-box">
+                  <img src="{% static 'images/cng.jpeg' %}" alt="" />
+                  <!-- <i class="bi bi-leaf"></i> -->
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    CNG
+                  </h5>
+                  <p>
+                    CNG gas in full form is Compressed Natural Gas.
+                    It is a type of natural gasthat is compressed under tremendous pressure.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box ">
+                <div class="img-box">
+                  <img src="{% static 'images/pallet.jpeg' %}" alt="" />
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Pellet
+                  </h5>
+                  <p>
+                    Pellet fuels (or pellets) are a type of solid fuel made from compressed organic material.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box ">
+                <div class="img-box">
+                  <img src="{% static 'images/ethanol.jpeg' %}" alt="" />
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Ethanol
+                  </h5>
+                  <p>
+                    Ethanol is an important industrial chemical; it is used as a solvent, in the synthesis of other
+                    organic chemicals,
+                    and as an additive to automotive gasoline.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box ">
+                <div class="img-box">
+                  <img src="{% static 'images/biofuel.jpeg' %}" alt="" />
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Bio Fuel
+                  </h5>
+                  <p>
+                    biofuel, any fuel that is derived from biomass—that is,
+                    plant or algae material or animal waste. Since such feedstock material can be replenished readily.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="item">
+              <div class="box ">
+                <div class="img-box">
+                  <img src="images/s4.png" alt="" />
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Machine Welding
+                  </h5>
+                  <p>
+                    when looking at its layout. The point of using Lorem Ipsum is
+                    that it has a more-or-less normal
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box ">
+                <div class="img-box">
+                  <img src="images/s6.png" alt="" />
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Car Welding
+                  </h5>
+                  <p>
+                    when looking at its layout. The point of using Lorem Ipsum is
+                    that it has a more-or-less normal
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btn-box">
+        <a href="">
+          Read More
+        </a>-->
+          </div>
+        </div>
+  </section>
+
+  <!-- service section ends -->
+
+  <!-- about section -->
+
+  <section class="about_section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-5 offset-md-1">
+          <div class="detail-box pr-md-2">
+            <div class="heading_container">
+              <h2 class="" id="about_section">
+                About Us
+              </h2>
+            </div>
+            <p class="detail_p_mt" style="text-align: justify;">
+              RGM Future Vision 21 is a company focused on the production and distribution of biofuels. Founded in July
+              2020 and headquartered in Kurukshetra, Haryana, RGM Future Vision 21 operates as a private company. Its
+              primary business activity centers around creating sustainable biofuel alternatives, aiming to contribute
+              to a cleaner, renewable energy landscape.
+              The company likely engages in producing biofuels from renewable sources, such as organic waste and plant
+              materials, to reduce carbon emissions and support energy needs in an environmentally friendly way. Its
+              structure and scope reflect India's growing commitment to renewable energy solutions, aligning with
+              national efforts to adopt sustainable energy sources that minimize dependence on fossil fuels. The company
+              operates with a modest capital base but could have growth potential through partnerships, investments, or
+              government support, aligning with India's push for green technologies. </p>
+              
+          </div>
+        </div>
+        <div class="col-md-6 px-0">
+          <div class="img-box ">
+            <img src="{% static 'images/plantphoto.jpeg' %}" class="box_img" alt="about img" id="abt-img">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- about section ends -->
+
+  <!-- contact section -->
+  <section class="contact_section " style="background-color: white;">
+    <div class="container-fluid">
+
+      <div class="row">
+        <div class="col-md-6 px-0" id="abt-center">
+          <div class="img-box ">
+            <img src="{% static 'images/logorgm.jpeg' %}" class="box_img" alt="about img" id="contact-img">
+          </div>
+        </div>
+        <div class="col-md-5 mx-auto">
+          <div class="form_container" style="background-color: rgb(184, 182, 182);">
+            <div class="heading_container heading_center">
+              <h2 id="contact_section">Get In Touch</h2>
+            </div>
+            <form action="/contactForm/" method="POST">
+              {% csrf_token %}
+              <div class="form-row">
+                <div class="form-group col">
+                  <input type="text" class="form-control" placeholder="Your Name" name="clientName" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-lg-6">
+                  <input type="text" class="form-control" placeholder="Phone Number" name="phoneNumber" />
+                </div>
+                <div class="form-group col-lg-6">
+                  <select id="" class="form-control wide" name="option">
+                    <option value="">Select Service</option>
+                    <option value="Pellets">Pellets</option>
+                    <option value="CNG">CNG</option>
+                    <option value="Ethanol">Ethanol</option>
+                    <option value="BioFuel Fertilizer">BioFuel Fertilizer</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col">
+                  <input type="email" class="form-control" placeholder="Email" name="email" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col">
+                  <input type="text" class="message-box form-control" placeholder="Message" name="message" />
+                </div>
+              </div>
+              <div class="btn_box">
+                <button>
+                  SEND
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end contact section -->
+  <!-- info section -->
+  <section class="info_section ">
+    <div class="container">
+      <div class="info_top">
+        <div class="row">
+          <div class="col-md-3 ">
+            <a class="navbar-brand" href="/index">
+              RGMFutureVision21
+            </a>
+          </div>
+          <div class="col-md-5 ">
+            <div class="info_contact">
+              <!-- <a href="">
+                ㅤㅤㅤㅤㅤㅤ<i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  ㅤㅤLocation
+                </span>
+              </a> -->
+              <a href="">
+                ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ<i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  <a href="tel:8199857208">+91 9079183342</a>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4 ">
+            <div class="social_box">
+              <a href="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="info_bottom">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="info_detail">
+              <h5>
+                Company
+              </h5>
+              <p>
+                RGM Future Vision 21 is a company focused on the production and distribution of biofuels. Founded in
+                July 2020 and headquartered in Kurukshetra, Haryana, RGM Future Vision 21 operates as a private company
+                classified as non-governmental. Its primary business activity centers around creating sustainable
+                biofuel alternatives, aiming to contribute to a cleaner, renewable energy landscape.
+              </p>
+            </div>
+          </div>
+         
+          <div class="col-lg-4 col-md-6">
+            <div class="info_detail">
+              <h5>
+                Services
+              </h5>
+              <p style="text-align: justify;">
+                Its primary business activity centers around creating sustainable biofuel alternatives, aiming to
+                contribute to a cleaner, renewable energy landscape.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <div class="">
+              <h5>
+                Useful links
+              </h5>
+              <ul class="info_menu">
+                <li>
+                  <a href="/index">
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a href="/about">
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a href="/team">
+                    Team
+                  </a>
+                </li>
+                <li>
+                  <a href="/career">
+                    Careers
+                  </a>
+                </li>
+                <li class="mb-0">
+                  <a href="/contact">
+                    Contact Us
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info_section -->
+
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        ©
+        <span id="displayYear"></span>
+        RGM Future Vision. All rights reserved. Unauthorized duplication or publication of any materials from this site
+        is expressly prohibited without written permission from RGM Future Vision.
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+  <!-- jQery -->
+  <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <!-- bootstrap js -->
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+  <!-- owl slider -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <!-- nice select -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"
+    integrity="sha256-Zr3vByTlMGQhvMfgkQ5BtWRSKBGa2QlspKYJnkjZTmo=" crossorigin="anonymous"></script>
+  <!-- custom js -->
+  <script src="{% static 'js/custom.js' %}"></script>
+  <!-- Google Map -->
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+  <!-- End Google Map -->
+  <script>
+    document.getElementById('openFormBtn').addEventListener('click', function () {
+      document.getElementById('formPopup').style.display = 'flex';
+    });
+
+    document.getElementById('closeFormBtn').addEventListener('click', function () {
+      document.getElementById('formPopup').style.display = 'none';
+    });
+
+   
+  </script>
+</body>
+
+</html>

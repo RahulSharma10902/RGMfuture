@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGMFuturevision21</title>
+    <link rel="shortcut icon" href="{% static 'images/rgmtansparentlogo.png' %}" type="image/x-icon">
+    <style>
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#004c4c;
+}
+
+#loading-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #004c4c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:2rem;
+    flex-direction: column;
+}
+
+.progress-container {
+    width: 40%;
+    background-color: #004c4c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 3rem;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    height: 20px;
+    width: 0%;
+    background-color: #ff6a00;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    transition: width 0.4s ease;
+}
+
+#progress-text {
+    font-size: 20px;
+    color:white;
+}
+#logo{
+    height:40%;
+    width:auto;
+    border-radius: 50%;
+    
+}
+
+    </style>
+</head>
+<body>
+    <div id="loading-screen">
+        <img src="{% static 'images/rgmtansparentlogo.png' %}" alt="" id="logo">
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <div id="progress-text">0%</div>
+    </div>
+    <script>
+        window.addEventListener('load', function() {
+    const progressBar = document.getElementById('progress-bar');
+    const progressText = document.getElementById('progress-text');
+    let progress = 0;
+
+    const interval = setInterval(() => {
+        if (progress < 100) {
+            progress += 1;
+            progressBar.style.width = progress + '%';
+            progressText.textContent = progress + '%';
+        } else {
+            clearInterval(interval);
+            window.location.href = 'index/';  // Redirect to another HTML page
+        }
+    }, 30);  // Adjust the speed of the loading bar
+});
+
+    </script>
+</body>
+</html>
